@@ -50,6 +50,7 @@ El proyecto ya cuenta con una primera API construida con FastAPI. La version ini
 - Registrar evaluaciones individuales.
 - Listar evaluaciones.
 - Generar una recomendacion basica por jugador.
+- Cargar datos de prueba para validar la API rapidamente.
 
 ## Tecnologias actuales
 
@@ -85,6 +86,7 @@ virtual-football-coach/
 |   |-- models.py
 |   |-- routes/
 |       |-- __init__.py
+|       |-- demo.py
 |       |-- players.py
 |       |-- games.py
 |       |-- evaluations.py
@@ -141,6 +143,7 @@ http://localhost:8000/docs
 ```text
 GET  /
 GET  /health
+POST /demo/load-sample-data
 GET  /players/
 POST /players/
 GET  /players/{player_id}
@@ -150,6 +153,18 @@ GET  /evaluations/
 POST /evaluations/
 GET  /evaluations/{player_id}/recommendation
 ```
+
+## Prueba rapida en Swagger
+
+Despues de ejecutar el servidor y abrir `http://localhost:8000/docs`, se puede probar el sistema asi:
+
+1. Abrir `POST /demo/load-sample-data`.
+2. Presionar `Try it out`.
+3. Presionar `Execute`.
+4. Abrir `GET /players/` y ejecutar para ver jugadores de prueba.
+5. Abrir `GET /games/` y ejecutar para ver el partido de prueba.
+6. Abrir `GET /evaluations/` y ejecutar para ver evaluaciones.
+7. Abrir `GET /evaluations/{player_id}/recommendation`, escribir `1` como player_id y ejecutar para ver una recomendacion inicial.
 
 ## Documentacion del proyecto
 
