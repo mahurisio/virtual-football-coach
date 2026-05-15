@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from src.routes import evaluations_router, games_router, players_router
+from src.routes import demo_router, evaluations_router, games_router, players_router
 
 
 def create_app() -> FastAPI:
@@ -9,6 +9,7 @@ def create_app() -> FastAPI:
     app.include_router(players_router)
     app.include_router(games_router)
     app.include_router(evaluations_router)
+    app.include_router(demo_router)
 
     @app.get("/")
     def root() -> dict[str, str]:
