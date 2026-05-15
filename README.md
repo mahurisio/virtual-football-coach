@@ -39,18 +39,17 @@ Datos iniciales:
 - Calificacion del partido.
 - Observaciones tecnicas.
 
-## Vision futura
+## Estado actual
 
-A futuro, el proyecto puede crecer hacia:
+El proyecto ya cuenta con una primera API construida con FastAPI. La version inicial permite:
 
-- Analisis de datos publicos.
-- Comparacion por posicion.
-- Reportes individuales.
-- Reportes colectivos.
-- Recomendaciones automaticas de entrenamiento.
-- Analisis de video.
-- Datos fisicos como distancia recorrida, velocidad y zonas de esfuerzo.
-- Modelos de inteligencia artificial para apoyar decisiones tecnicas.
+- Registrar jugadores.
+- Listar jugadores.
+- Registrar partidos.
+- Listar partidos.
+- Registrar evaluaciones individuales.
+- Listar evaluaciones.
+- Generar una recomendacion basica por jugador.
 
 ## Tecnologias actuales
 
@@ -69,7 +68,7 @@ A futuro, el proyecto puede crecer hacia:
 - AWS para despliegue, almacenamiento y analisis de datos.
 - Modelos de IA para recomendaciones futuras.
 
-## Estructura inicial del proyecto
+## Estructura actual del proyecto
 
 ```text
 virtual-football-coach/
@@ -87,7 +86,7 @@ virtual-football-coach/
 |   |-- routes/
 |       |-- __init__.py
 |       |-- players.py
-|       |-- matches.py
+|       |-- games.py
 |       |-- evaluations.py
 |-- .gitignore
 |-- requirements.txt
@@ -144,11 +143,33 @@ GET  /
 GET  /health
 GET  /players/
 POST /players/
-GET  /matches/
-POST /matches/
+GET  /players/{player_id}
+GET  /games/
+POST /games/
 GET  /evaluations/
 POST /evaluations/
+GET  /evaluations/{player_id}/recommendation
 ```
+
+## Documentacion del proyecto
+
+- [Vision del proyecto](docs/project-vision.md)
+- [Requisitos iniciales](docs/requirements.md)
+- [Metricas de jugadores](docs/player-metrics.md)
+- [Roadmap](docs/roadmap.md)
+
+## Vision futura
+
+A futuro, el proyecto puede crecer hacia:
+
+- Analisis de datos publicos.
+- Comparacion por posicion.
+- Reportes individuales.
+- Reportes colectivos.
+- Recomendaciones automaticas de entrenamiento.
+- Analisis de video.
+- Datos fisicos como distancia recorrida, velocidad y zonas de esfuerzo.
+- Modelos de inteligencia artificial para apoyar decisiones tecnicas.
 
 ## Autor
 
